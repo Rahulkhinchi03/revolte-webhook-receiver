@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "start": "WEBHOOK_SECRET=preview-secret DATABASE_PATH=./data/preview.db npm run start",
+  "port": 4173,
+  "type": "api",
+  "install": [
+    {
+      "name": "Node dependencies",
+      "check": "test -d node_modules",
+      "run": "npm ci",
+      "inputs": ["package.json", "package-lock.json"]
+    }
+  ]
+}
