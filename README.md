@@ -69,17 +69,10 @@ The default handler logs the event ID and type. Domain-specific behavior can be 
 
 # Revolte: first-run DX findings
 
-**Rahul Khinchi** · 23 September 2026
-
-Notes from a first session with Revolte, taken as a new user with no prior exposure to the product. I signed up, built a service end to end, pushed it to GitHub, and ran it locally. Total time: roughly one hour.
-
-Repo produced in the session: https://github.com/Rahulkhinchi03/revolte-webhook-receiver
-
+Notes from a first session with Revolte, taken as a new user with no prior exposure to the product. I signed up, built a service end to end, pushed it to GitHub, and ran it locally.
 ---
 
 ## What I built
-
-A Node.js webhook receiver service: signed JSON events over `POST /webhooks`, HMAC SHA-256 verification against the raw request body, strict payload validation, durable event-ID deduplication in SQLite, immediate 200 with an injectable async handler running afterwards.
 
 I gave it the requirements. I did not write any of the code.
 
