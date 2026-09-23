@@ -98,7 +98,7 @@ Before writing anything, it asked four scoping questions, and every one of them 
 
 The plan then caught three things I never specified:
 
-- Raw body capture before parsing, which is the classic HMAC bug — re-serialised JSON produces a different digest
+- Raw body capture before parsing, which is the classic HMAC bug; re-serialised JSON produces a different digest
 - `crypto.timingSafeEqual` rather than string comparison, closing a timing side channel
 - Atomic `INSERT OR IGNORE` for dedup admission rather than a check-then-write race
 
@@ -122,7 +122,7 @@ Cloned fresh, installed clean, tests passed, service ran, all four HTTP behaviou
 
 ### 1. The repo connection comes too late
 
-I ran a complete session — 27 files, full test suite, live HTTP verification — and was never asked where the code should go until it was already written. "Connect an application" only appeared in the source control panel after the build finished.
+I ran a complete session: 27 files, full test suite, live HTTP verification and was never asked where the code should go until it was already written. "Connect an application" only appeared in the source control panel after the build finished.
 
 The CLI docs list a connected application as a prerequisite, so the two surfaces disagree about when this connection happens. A new user following the console path builds something real and then discovers the delivery loop was never wired up.
 
@@ -158,7 +158,7 @@ The first screen asks a new user to pick a model (GPT 5.6 Luna, Medium) and comp
 
 ### 6. Repo picker requires an initialised repo, without saying so
 
-Connecting an empty GitHub repo fails with *"The provided repository does not have any remote branches"* — but only after filling in project name, application name, and repo, then clicking Proceed.
+Connecting an empty GitHub repo fails with *"The provided repository does not have any remote branches"* but only after filling in project name, application name, and repo, then clicking Proceed.
 
 **Proposal:** state the requirement on the picker, or offer to initialise.
 
@@ -188,7 +188,7 @@ The engine is stronger than the signals around it. That gap is cheap to close an
 
 Things I would ship from one hour of use:
 
-1. **"I let an AI agent build a webhook receiver and checked its work"** — the honest version, including what it caught that I didn't specify and where the DX got in the way. Failure-inclusive posts travel further than clean demos in this category.
-2. **Interactive workspace vs CLI, same task** — nobody has written this, and the choice keeps surfacing in the product rather than in the docs.
-3. **`.revolte/guides.md` deep dive** — standing project context the agent reads before acting is the most interesting convention in the product, and it is currently a footnote at the bottom of an install guide.
-4. **A governance-focused piece** — the customer quotes all sell auditability over speed, but the content doesn't yet show what that looks like in practice when an agent fails.
+1. **"I let an AI agent build a webhook receiver and checked its work"**, the honest version, including what it caught that I didn't specify and where the DX got in the way. Failure-inclusive posts travel further than clean demos in this category.
+2. **Interactive workspace vs CLI, same task**. nobody has written this, and the choice keeps surfacing in the product rather than in the docs.
+3. **`.revolte/guides.md` deep dive**, standing project context the agent reads before acting is the most interesting convention in the product, and it is currently a footnote at the bottom of an install guide.
+4. **A governance-focused piece**, the customer quotes all sell auditability over speed, but the content doesn't yet show what that looks like in practice when an agent fails.
